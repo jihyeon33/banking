@@ -12,7 +12,7 @@ import java.util.Map;
 public class main {
     @RequestMapping(value="/")
     public String index(Model model){
-        model.addAttribute("test","1234");
+        model.addAttribute("test", "Hello world! This is Spring MVC project by using IntelliJ");
         return "index";
     }
 
@@ -20,7 +20,7 @@ public class main {
     @ResponseBody
     public Object json(){
         Map<String, String> m = new HashMap<>();
-        m.put("test","1234");
+        m.put("test","Hello world!(/json) This is Spring MVC project by using IntelliJ");
         return m;
     }
 }
