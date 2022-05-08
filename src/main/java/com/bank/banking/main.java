@@ -16,6 +16,14 @@ public class main {
         return "index";
     }
 
+    @RequestMapping(value="/main.do")
+    public String doMain(Model model){
+        model.addAttribute("cash","현금");
+        model.addAttribute("bankAccount","은행계좌/체크카드");
+        model.addAttribute("stockAccount","주식계좌");
+        return "main";
+    }
+
     @RequestMapping(value="/json",produces="application/json")
     @ResponseBody
     public Object json(){
