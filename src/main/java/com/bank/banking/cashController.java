@@ -12,12 +12,9 @@ import java.util.Map;
 @Controller
 public class cashController {
     @RequestMapping(value= "/cashMain.do")
-    @ResponseBody
-    public String doCashMain(@ModelAttribute requestDto param, Model model){
-        String resultCode=param.getResultCode();
-        String msg=param.getMsg();
-        model.addAttribute("resultCode",resultCode);
-        model.addAttribute("msg",msg);
+    public String doCashMain(Model model){
+        model.addAttribute("resultCode","성공입니다.");
+        model.addAttribute("msg","현금 페이지 입니다.");
         return "cashMain";
     }
 }
