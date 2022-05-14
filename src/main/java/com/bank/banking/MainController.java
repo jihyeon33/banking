@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class main {
+public class MainController {
     @RequestMapping(value="/")
     public String index(Model model){
         model.addAttribute("test", "Hello world! This is Spring MVC project by using IntelliJ");

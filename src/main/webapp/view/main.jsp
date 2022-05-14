@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <a href='/cashMain.do' id='btnCash'>${cash}</a><br/>
-    <a href='/bankAccountMain.do' id='btnBankAccount' >${bankAccount}</a><br>
-    <a href='/stockAccountMain.do' id='btnStockAccount'>${stockAccount}</a><br>
+    <a href='/wallet/CashMain.do' id='btnCash'>${cash}</a><br/>
+    <a href='/wallet/BankAccountMain.do' id='btnBankAccount' >${bankAccount}</a><br>
+    <a href='/wallet/StockAccountMain.do' id='btnStockAccount'>${stockAccount}</a><br>
 </body>
 
 </html>
