@@ -17,12 +17,19 @@ $(document).ready(function(){
             url:"/wallet/AccountInfoRegister.json",
             dataType:"json",
             data : params,
-            success:function(jsonObject){
-                alert("success");
-                alert(jsonObject);
+            error:function(error){
+                alert("Error!");
+            },
+            success:function(data){
+                alert("success!");
+                alert(data);
+                alert(data.bankNm);
+                alert(data.bankAccountNum);
+            },
+            complete:function(){
+                alert("complete!");
             }
         });
-
     });
 });
 </script>
@@ -46,6 +53,8 @@ $(document).ready(function(){
     <input type="text" name="accountNumber" value="계좌번호를 입력하세요."/>
     </form>
     <button type="button" id="registerBtn">등록</button>
+
+    <div>..은행()</div>
 
 
 </body>
