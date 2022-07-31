@@ -31,7 +31,7 @@ $(document).ready(function(){
             }
         });
     });
-/*
+
     $('#testBtn').on('click',function(){
         alert("hello2");
         var params=$('#accountInfoFrm').serialize();
@@ -47,15 +47,17 @@ $(document).ready(function(){
             success:function(data){
                 alert("success");
                 alert(data);
-                alert(data.bankNm);
-                alert(data.bankAccountNum);
+                console.log(data);
+                console.log(data.bankAccountDto);
+                alert(data.bankAccountDto.bankNm);
+
             },
             complete:function(){
                 alert("complete");
             }
         });
     });
-*/
+
 });
 
 </script>
@@ -79,7 +81,7 @@ $(document).ready(function(){
     <input type="text" name="accountNumber" value="계좌번호를 입력하세요."/>
     </form>
     <button type="button" id="registerBtn">등록</button>
- <%-- <button type="button" id="testBtn">등록2</button> --%>
+  <button type="button" id="testBtn">등록2</button>
 
     <div>----------------------------------------------------------------</div>
     <div>..은행()</div>

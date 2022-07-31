@@ -1,10 +1,12 @@
 package com.bank.banking.wallet.controller;
 
+import com.bank.banking.wallet.dto.BankAccountDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,26 +37,29 @@ public class BankAccountController {
         return map;
     }
 
-/*
+
     @RequestMapping(value = "/wallet/AccountInfoRegister2.json" ,produces="application/json")
-    @ResponseBody
-    public String accountInfoRegister2(@RequestParam HashMap params,Model model) throws Exception {
+    public ModelAndView accountInfoRegister2(@RequestParam HashMap params,ModelAndView mav) throws Exception {
         System.out.println(params);
         System.out.println("test2");
 
         String bankNm=(String)params.get("bankName");
         String bankAccountNum=(String)params.get("accountNumber");
 
-        */
       /*JSONArray jsonArrayList = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("bankNm",bankNm);
-        jsonArrayList.add(jsonObject);*//*
-
+        jsonArrayList.add(jsonObject);
 
         model.addAttribute("jsonArrayList","jsonArrayList");
         return "jsonView";
+        */
+        BankAccountDto bankAccountDto = new BankAccountDto(bankNm,bankAccountNum);
+        mav.addObject("bankAccountDto",bankAccountDto);
+        mav.setViewName("jsonView");
+
+        return mav;
     }
-*/
+
 
 }

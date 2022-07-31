@@ -1,4 +1,5 @@
 com\bank\banking\wallet\controller\BankAccountController.class
+com\bank\banking\wallet\dto\BankAccountDto.class
 com\bank\banking\wallet\controller\StockAccountController.class
 com\bank\banking\wallet\controller\CashController.class
 com\bank\banking\MainController.class
