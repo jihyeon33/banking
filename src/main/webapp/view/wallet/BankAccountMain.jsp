@@ -31,6 +31,7 @@ $(document).ready(function(){
             }
         });
     });
+/*
     $('#testBtn').on('click',function(){
         alert("hello2");
         var params=$('#accountInfoFrm').serialize();
@@ -54,6 +55,7 @@ $(document).ready(function(){
             }
         });
     });
+*/
 });
 
 </script>
@@ -77,7 +79,7 @@ $(document).ready(function(){
     <input type="text" name="accountNumber" value="계좌번호를 입력하세요."/>
     </form>
     <button type="button" id="registerBtn">등록</button>
-    <button type="button" id="testBtn">등록2</button>
+ <%-- <button type="button" id="testBtn">등록2</button> --%>
 
     <div>----------------------------------------------------------------</div>
     <div>..은행()</div>
