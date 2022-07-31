@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+
+import static org.json.simple.JSONObject.*;
 
 @Controller
 public class BankAccountController {
@@ -28,6 +33,24 @@ public class BankAccountController {
         map.put("bankNm",bankNm);
         map.put("bankAccountNum",bankAccountNum);
         return map;
+    }
+
+    @RequestMapping(value = "/wallet/AccountInfoRegister2.json" ,produces="application/json")
+    @ResponseBody
+    public String accountInfoRegister2(@RequestParam HashMap params,Model model) throws Exception {
+        System.out.println(params);
+        System.out.println("test2");
+
+        String bankNm=(String)params.get("bankName");
+        String bankAccountNum=(String)params.get("accountNumber");
+
+        /*JSONArray jsonArrayList = new JSONArray();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("bankNm",bankNm);
+        jsonArrayList.add(jsonObject);*/
+
+        model.addAttribute("jsonArrayList","jsonArrayList");
+        return "jsonView";
     }
 
 }

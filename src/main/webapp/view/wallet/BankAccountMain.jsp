@@ -31,7 +31,31 @@ $(document).ready(function(){
             }
         });
     });
+    $('#testBtn').on('click',function(){
+        alert("hello2");
+        var params=$('#accountInfoFrm').serialize();
+        alert(params);
+        $.ajax({
+            type:"POST",
+            url:"/wallet/AccountInfoRegister2.json",
+            dataType:"json",
+            data:params,
+            error:function(){
+                alert("fail");
+            },
+            success:function(data){
+                alert("success");
+                alert(data);
+                alert(data.bankNm);
+                alert(data.bankAccountNum);
+            },
+            complete:function(){
+                alert("complete");
+            }
+        });
+    });
 });
+
 </script>
 </head>
 
@@ -53,7 +77,9 @@ $(document).ready(function(){
     <input type="text" name="accountNumber" value="계좌번호를 입력하세요."/>
     </form>
     <button type="button" id="registerBtn">등록</button>
+    <button type="button" id="testBtn">등록2</button>
 
+    <div>----------------------------------------------------------------</div>
     <div>..은행()</div>
 
 
